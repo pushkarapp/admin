@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+ {% load static %}
+ {% block mainContent %}
+<div class="page-wrapper">
+	<div class="page-content">
+
+
+		<div class="row">
+            <div class="col-xl-7 mx-auto">
+              
+                <div class="card border-top border-0 border-4 border-primary">
+                    <div class="card-body p-5">
+                        <div class="card-title d-flex align-items-center">
+                            <div><i class="bx bxs-user me-1 font-22 text-primary"></i>
+                            </div>
+                            <h5 class="mb-0 text-primary">{{ coin.gift_name }} Details</h5>
+                        </div>
+                        <hr>
+                        <a href="{% url 'gift_update' coin.id %}">Update</a> | <a href="{% url 'gift_detele' coin.id %}">Delete</a>
+                        <div class="col-md-12">
+                            <label  class="form-label">Address</label>:- 
+                            <!-- <input type="email" class="form-control" id="inputFirstName"> -->
+                            {{ coin.gift_name }}
+                        </div>
+                          
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        <!--end row-->
+
+	</div>
+</div>
+
+{% endblock mainContent %}

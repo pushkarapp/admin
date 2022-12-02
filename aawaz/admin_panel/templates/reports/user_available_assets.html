@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+ {% load static %}
+ {% block mainContent %}
+<div class="page-wrapper">
+	<div class="page-content">
+
+
+		<h6 class="mb-0 text-uppercase">Report</h6>
+						<hr/>
+						<div class="card">
+							<div class="card-body">
+								
+								<table class="table mb-0 table-striped">
+									<thead>
+										<tr>
+											<th scope="col">Username</th>
+											<th scope="col">First Name</th>
+											<th scope="col">Coin (purchase/available) </th>
+											<th scope="col">Gifts (purchase/available) </th>
+											<th scope="col">Diamonds (purchase/available) </th>
+											
+										</tr>
+									</thead>
+									<tbody>
+									
+										{% for asset in assets %}
+										<tr>
+											<td>{{asset.user.username}}</td>
+											<td>{{asset.user.first_name}}</td>
+											<td>{{asset.total_coin_purchased}} / {{asset.available_coins}}</td>
+											<td>{{asset.total_diamonds_purchased}} / {{asset.available_diamonds}}</td>
+											<td>{{asset.total_gifts_purchased}} / {{asset.available_gift}}</td>
+										</tr>
+										{% endfor %}
+
+										
+										
+									</tbody>
+								</table>
+							</div>
+							</div>
+
+	</div>
+</div>
+
+{% endblock mainContent %}

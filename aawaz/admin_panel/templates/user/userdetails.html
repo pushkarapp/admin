@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+ {% load static %}
+ {% block mainContent %}
+<div class="page-wrapper">
+	<div class="page-content">
+
+
+		<div class="row">
+            <div class="col-xl-7 mx-auto">
+              
+                <div class="card border-top border-0 border-4 border-primary">
+                    <div class="card-body p-5">
+                        <div class="card-title d-flex align-items-center">
+                            <div><i class="bx bxs-user me-1 font-22 text-primary"></i>
+                            </div>
+                            <h5 class="mb-0 text-primary">{{ user.username }} Details</h5>
+                        </div>
+                        <hr>
+                        <a href="{% url 'user_update' user.username %}">Update</a> | <a href="{% url 'user_delete' user.username %}">Delete</a>
+                        <div class="col-md-6">
+                            <label  class="form-label">Username</label>:- 
+                            <!-- <input type="email" class="form-control" id="inputFirstName"> -->
+                            {{ user.username }}
+                        </div>
+                            <div class="col-md-6">
+                                <label  class="form-label">First Name</label>:- 
+                                <!-- <input type="email" class="form-control" id="inputFirstName"> -->
+                                {{ user.first_name }}
+                            </div>
+                            <div class="col-md-6">
+                                <label  class="form-label">Last Name</label>:- 
+                                {{ user.last_name }}
+                            </div>
+                            <div class="col-md-6">
+                                <label  class="form-label">Email</label>:- 
+                                {{ user.email }}
+                            </div>
+                           
+                            <div class="col-12">
+                                <label  class="form-label">Active Status</label>:-  
+                                {{ user.is_active }}
+                            </div>
+                            <div class="col-12">
+                                <label  class="form-label">Mobile Number</label>:-  
+                                {{ user_details.mobile_number }}
+                            </div>
+                            <div class="col-12">
+                                <label  class="form-label">Date Of Birth</label>:-  
+                                {{ user_details.date_of_birth }}
+                            </div>
+                            <div class="col-12">
+                                <label  class="form-label">cover_image</label>:-  
+                                {{ user_details.cover_image }}
+                            </div>
+                            <div class="col-12">
+                                <label  class="form-label">profile_image</label>:-  
+                                {{ user_details.profile_image }}
+                            </div>
+                            <div class="col-12">
+                                <label  class="form-label">gender</label>:-  
+                                {{ user_details.gender }}
+                            </div>
+                            <div class="col-12">
+                                <label  class="form-label">about</label>:-  
+                                {{ user_details.about }}
+                            </div>
+                            <div class="col-12">
+                                <label  class="form-label">location</label>:-  
+                                {{ user_details.location }}
+                            </div>
+                            <div class="col-12">
+                                <label  class="form-label">lavel</label>:-  
+                                {{ user_details.lavel }}
+                            </div>
+                            <div class="col-12">
+                                <label  class="form-label">address_line_one</label>:-  
+                                {{ user_details.address_line_one }}
+                            </div>
+                           
+                            
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        <!--end row-->
+
+	</div>
+</div>
+
+{% endblock mainContent %}

@@ -1,0 +1,169 @@
+{% extends 'layout.html' %}
+ {% load static %}
+ {% block mainContent %}
+<div class="page-wrapper">
+	<div class="page-content">
+
+
+		<div class="row">
+            <div class="row">
+                <div class="col-xl-7 mx-auto">
+                  
+                    <hr/>
+                    <div class="card border-top border-0 border-4 border-primary">
+                        <div class="card-body p-5">
+                            <div class="card-title d-flex align-items-center">
+                                <div><i class="bx bxs-user me-1 font-22 text-primary"></i>
+                                </div>
+                                <h5 class="mb-0 text-primary">{% if object %} Update User {% else %} + Add A New User{% endif %}</h5>
+                            </div>
+                            <hr>
+                            <p>  </p>
+                            <hr>
+                            <form class="row g-3" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="col-md-6">
+                                    <label for="inputFirstName" class="form-label">Username</label>
+                                    <input type="text" class="form-control" name="username" {% if object %} value={{object.username}} {% endif %} id="inputFirstName">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputFirstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" name="first_name" {% if object %} value={{object.first_name}} {% endif %}  id="inputFirstName">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputLastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" name="last_name" {% if object %} value={{object.last_name}} {% endif %}  id="inputLastName">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email" {% if object %} value={{object.email}} {% endif %}  id="inputEmail">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" name="password" {% if object %} value={{object.Password}} {% endif %}  id="inputPassword">
+                                </div>
+                                <div class="col-6">
+                                    <label for="inputAddress"  class="form-label">Status</label>
+                                    <select id="inputState" name="is_active" class="form-select">
+                                        {% if object %}
+                                            {% if user.is_active %}
+                                                
+                                            <option value="False">Inactive</option>
+                                            <option selected value="True">Active</option>
+                                                
+                                            {% else %}
+                                                
+                                            <option selected value="False">Inactive</option>
+                                            <option value="True">Active</option>
+                                        {% endif %}
+                                        {% else %}
+                                           
+                                            <option selected value="False">Inactive</option>
+                                            <option value="True">Active</option>
+                                        {% endif %}
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                   
+                                    <label class="form-label">Mobile Number:</label>
+                                    <input type="text" name="mobile_number" {% if object_detail %} value={{object_detail.mobile_number}} {% endif %} class="form-control">
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label">Profile Image:</label>
+                                    <input type="file" name="profile_image" class="form-control">
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label">Cover Image:</label>
+                                    <input type="file" name="cover_image" class="form-control">
+                                </div>
+                                <div class="col-6">
+                                   
+                                    <label class="form-label">Date Of Birth:</label>
+                                    <input type="date" name="date_of_birth" {% if object_detail %} value={{object_detail.date_of_birth}} {% endif %} class="form-control">
+                                </div>
+                                <div class="col-6">
+                                   
+                                    <label class="form-label">Gender:</label>
+                                    <select id="inputState" name="gender" class="form-select">
+                                        
+                                        <option selected value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        </select>
+                                    
+                                </div>
+                                <div class="col-6">
+                                   
+                                    <label class="form-label">About:</label>
+                                    <input type="text" name="about" {% if object_detail %} value={{object_detail.about}} {% endif %} class="form-control">
+                                </div>
+                                <div class="col-6">
+                                   
+                                    <label class="form-label">Location:</label>
+                                    <input type="text" name="location" {% if object_detail %} value={{object_detail.location}} {% endif %} class="form-control">
+                                </div>
+                                <div class="col-6">
+                                   
+                                    <label class="form-label">lavel:</label>
+                                    <input type="text" name="lavel" {% if object_detail %} value={{object_detail.lavel}} {% endif %} class="form-control">
+                                </div>
+                                <div class="col-6">
+                                   
+                                    <label class="form-label">address_line_one:</label>
+                                    <input type="text" name="address_line_one" {% if object_detail %} value={{object_detail.address_line_one}} {% endif %} class="form-control">
+                                </div>
+
+
+
+
+
+                                <div class="col-6">
+                                   
+                                    <label class="form-label">address_line_two:</label>
+                                    <input type="text" name="address_line_two" {% if object_detail %} value={{object_detail.address_line_two}} {% endif %} class="form-control">
+                                </div>
+                                <div class="col-6">
+                                   
+                                    <label class="form-label">pincode:</label>
+                                    <input type="text" name="pincode" {% if object_detail %} value={{object_detail.pincode}} {% endif %} class="form-control">
+                                </div>
+                                <div class="col-6">
+                                   
+                                    <label class="form-label">city:</label>
+                                    <input type="text" name="city" {% if object_detail %} value={{object_detail.city}} {% endif %} class="form-control">
+                                </div>
+                                <div class="col-6">
+                                   
+                                    <label class="form-label">state:</label>
+                                    <input type="text" name="state" {% if object_detail %} value={{object_detail.state}} {% endif %} class="form-control">
+                                </div>
+
+
+                                <div class="col-6">
+                                   
+                                    <label class="form-label">pan_number:</label>
+                                    <input type="text" name="pan_number" {% if object_detail %} value={{object_detail.pan_number}} {% endif %} class="form-control">
+                                </div>
+
+                                <div class="col-6">
+                                   
+                                    <label class="form-label">pan_verification_date:</label>
+                                    <input type="text" name="pan_verification_date" {% if object_detail %} value={{object_detail.pan_verification_date}} {% endif %} class="form-control">
+                                </div>
+                               
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary px-5">Update User</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!--end row-->
+        </div>
+        <!--end row-->
+
+	</div>
+</div>
+
+{% endblock mainContent %}

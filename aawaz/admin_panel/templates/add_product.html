@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+ {% load static %}
+ {% block mainContent %}
+<div class="page-wrapper">
+	<div class="page-content">
+
+
+		<div class="row">
+            <div class="col-xl-7 mx-auto">
+              
+                <div class="card border-top border-0 border-4 border-primary">
+                    <div class="card-body p-5">
+                        <div class="card-title d-flex align-items-center">
+                            <div><i class="bx bxs-user me-1 font-22 text-primary"></i>
+                            </div>
+                            <h5 class="mb-0 text-primary"> Add Product</h5>
+                        </div>
+                        <hr>
+                        <form action = "" method = "post">
+                            {% csrf_token %}
+                            {{form.as_p }}
+                            <input type="submit" value=Submit">
+                        </form>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        <!--end row-->
+
+	</div>
+</div>
+
+{% endblock mainContent %}

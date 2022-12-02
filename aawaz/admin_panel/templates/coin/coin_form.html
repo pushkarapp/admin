@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+ {% load static %}
+ {% block mainContent %}
+<div class="page-wrapper">
+	<div class="page-content">
+
+
+		<div class="row">
+            <div class="row">
+                <div class="col-xl-7 mx-auto">
+                  
+                    <hr/>
+                    <div class="card border-top border-0 border-4 border-primary">
+                        <div class="card-body p-5">
+                            <div class="card-title d-flex align-items-center">
+                                <div><i class="bx bxs-user me-1 font-22 text-primary"></i>
+                                </div>
+                                <h5 class="mb-0 text-primary">{% if object %}Edit Coin {% else %} Create New Coin {% endif %}</h5>
+                            </div>
+                            <hr>
+                            <p>  </p>
+                            <hr>
+                        
+                            
+                        <form action="" method="post" class="row g-3" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="col-md-6">
+                                <label for="inputFirstName" class="form-label">Name</label>
+                                <input type="text" class="form-control" name="coin_name" {% if object %} value="{{ object.coin_name }}" {% endif %} id="inputFirstName">
+                               
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputLastName" class="form-label">Last Name</label>
+                                <input type="file" class="form-control" name="coin_image" {% if object %} value="{{ object.coin_image }}" {% endif %} id="">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputEmail" class="form-label">Price per coin</label>
+                                <input type="number" class="form-control" name="coin_rate" {% if object %} value="{{ object.coin_rate }}" {% endif %} id="">
+                                <input type="number" class="form-control" name="available_stock" value="0" style="display:none;">
+                            </div>
+
+                          
+                            <p><input type="submit" class="btn btn-success" value="Submit"></p>
+                        </form>
+                           
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!--end row-->
+        </div>
+        <!--end row-->
+
+	</div>
+</div>
+
+{% endblock mainContent %}

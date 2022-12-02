@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+ {% load static %}
+ {% block mainContent %}
+<div class="page-wrapper">
+	<div class="page-content">
+
+
+		<h6 class="mb-0 text-uppercase">All Coins</h6>
+						<hr/>
+						<div class="card">
+							<div class="card-body">
+								<a href="#">Create New Room </a>
+
+								<table class="table mb-0 table-striped">
+									<thead>
+										<tr>
+											<th scope="col">Name</th>
+											<th scope="col">Category</th>
+											<th scope="col">Total Speakers</th>
+											<th scope="col">Total Listeners</th>
+											
+										</tr>
+									</thead>
+									<tbody>
+									
+										<tr>
+											<td>Room 1</td>
+											<td>Social</td>
+											<td>6</td>
+											<td>200</td>
+										</tr>
+										<tr>
+											<td>Room 2</td>
+											<td>Political</td>
+											<td>8</td>
+											<td>500</td>
+										</tr>
+										<tr>
+											<td>Room 3</td>
+											<td>Sports</td>
+											<td>4</td>
+											<td>100</td>
+										</tr>
+										
+									</tbody>
+								</table>
+							</div>
+							</div>
+
+	</div>
+</div>
+
+{% endblock mainContent %}
